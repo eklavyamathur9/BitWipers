@@ -276,6 +276,121 @@ body {
     animation-delay: 1s;
 }
 
+/* Screenshot Section */
+.screenshots {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #f0f4ff 0%, #ffffff 100%);
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    margin-top: -1.5rem;
+    margin-bottom: 3rem;
+}
+
+.screenshots-gallery {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.screenshot-main {
+    margin-bottom: 2rem;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s;
+}
+
+.screenshot-main:hover {
+    transform: scale(1.02);
+}
+
+.screenshot-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    background: linear-gradient(135deg, #e0e7ff 0%, #f0f4ff 100%);
+    min-height: 300px;
+    object-fit: cover;
+    position: relative;
+}
+
+.screenshot-img::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+    pointer-events: none;
+}
+
+.screenshot-caption {
+    padding: 1rem;
+    background: white;
+    text-align: center;
+    color: var(--text-secondary);
+    font-weight: 500;
+    border-top: 1px solid var(--border-color);
+}
+
+.screenshot-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.screenshot-item {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s;
+    background: white;
+}
+
+.screenshot-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.screenshot-item .screenshot-img {
+    min-height: 180px;
+}
+
+.screenshot-item .screenshot-caption {
+    padding: 0.75rem;
+    font-size: 0.9rem;
+}
+
+/* Placeholder styling for missing images */
+.screenshot-img:not([src]), 
+.screenshot-img[src=""],
+.screenshot-img:broken {
+    position: relative;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.screenshot-img:not([src])::after,
+.screenshot-img[src=""]::after {
+    content: 'Screenshot will be displayed here';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 1rem;
+}
+
 /* Features Section */
 .features {
     padding: 80px 0;
@@ -580,6 +695,19 @@ body {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .screenshot-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .screenshot-main {
+        margin-bottom: 1.5rem;
+    }
+    
+    .section-subtitle {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+    
     .hero .container {
         grid-template-columns: 1fr;
         gap: 40px;

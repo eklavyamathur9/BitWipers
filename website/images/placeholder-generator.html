@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Screenshot Placeholder Generator</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f0f4ff;
+        }
+        .placeholder {
+            width: 1200px;
+            height: 800px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        .placeholder::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+        @keyframes rotate {
+            to { transform: rotate(360deg); }
+        }
+        .placeholder h2 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            z-index: 1;
+        }
+        .placeholder p {
+            font-size: 24px;
+            opacity: 0.9;
+            z-index: 1;
+        }
+        .icon {
+            font-size: 120px;
+            margin-bottom: 30px;
+            opacity: 0.8;
+            z-index: 1;
+        }
+        .instructions {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        ol {
+            text-align: left;
+            line-height: 1.8;
+            color: #555;
+        }
+        code {
+            background: #f0f0f0;
+            padding: 2px 6px;
+            border-radius: 3px;
+            color: #d63384;
+        }
+    </style>
+</head>
+<body>
+    <div class="instructions">
+        <h1>📸 How to Add Real Screenshots</h1>
+        <ol>
+            <li>Run the BitWipers application: <code>python -m src.bitwipers.main --gui</code></li>
+            <li>Take screenshots using:
+                <ul>
+                    <li><strong>Windows:</strong> Win + Shift + S (Snipping Tool)</li>
+                    <li><strong>Windows:</strong> Alt + PrtScn (Active window only)</li>
+                </ul>
+            </li>
+            <li>Save the screenshots with these exact names in <code>website/images/</code>:
+                <ul>
+                    <li><code>main-interface.png</code> - The main dashboard</li>
+                    <li><code>device-selection.png</code> - Device selection screen</li>
+                    <li><code>wiping-progress.png</code> - Progress bar during wiping</li>
+                    <li><code>certificate-preview.png</code> - Certificate generation view</li>
+                    <li><code>settings.png</code> - Settings or configuration panel</li>
+                </ul>
+            </li>
+            <li>Refresh the website to see your screenshots!</li>
+        </ol>
+        <p><strong>Note:</strong> These placeholders below show where your screenshots will appear.</p>
+    </div>
+
+    <div class="placeholder" id="main">
+        <div class="icon">🖥️</div>
+        <h2>Main Interface</h2>
+        <p>BitWipers Dashboard Screenshot</p>
+    </div>
+
+    <div class="placeholder" style="width: 600px; height: 400px;">
+        <div class="icon">💾</div>
+        <h2>Device Selection</h2>
+        <p>Screenshot will appear here</p>
+    </div>
+
+    <div class="placeholder" style="width: 600px; height: 400px;">
+        <div class="icon">⏳</div>
+        <h2>Wiping Progress</h2>
+        <p>Screenshot will appear here</p>
+    </div>
+
+    <div class="placeholder" style="width: 600px; height: 400px;">
+        <div class="icon">📜</div>
+        <h2>Certificate Preview</h2>
+        <p>Screenshot will appear here</p>
+    </div>
+
+    <div class="placeholder" style="width: 600px; height: 400px;">
+        <div class="icon">⚙️</div>
+        <h2>Settings Panel</h2>
+        <p>Screenshot will appear here</p>
+    </div>
+</body>
+</html>

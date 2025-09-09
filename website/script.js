@@ -192,5 +192,58 @@ function typeWriter(element, text, speed = 50) {
 //     }
 // });
 
+// Handle missing images with placeholders
+function handleImageError(img) {
+    const placeholderDiv = document.createElement('div');
+    placeholderDiv.className = 'image-placeholder';
+    placeholderDiv.style.width = '100%';
+    placeholderDiv.style.height = img.hasAttribute('data-height') ? img.dataset.height : '400px';
+    placeholderDiv.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
+    placeholderDiv.style.display = 'flex';
+    placeholderDiv.style.flexDirection = 'column';
+    placeholderDiv.style.alignItems = 'center';
+    placeholderDiv.style.justifyContent = 'center';
+    placeholderDiv.style.color = 'white';
+    placeholderDiv.style.borderRadius = '8px';
+    
+    const icon = document.createElement('div');
+    icon.style.fontSize = '48px';
+    icon.style.marginBottom = '10px';
+    icon.innerHTML = '📸';
+    
+    const text = document.createElement('div');
+    text.style.fontSize = '18px';
+    text.style.opacity = '0.9';
+    text.innerHTML = 'Screenshot will be added here';
+    
+    const filename = document.createElement('div');
+    filename.style.fontSize = '14px';
+    filename.style.opacity = '0.7';
+    filename.style.marginTop = '5px';
+    filename.innerHTML = `Expected: ${img.src.split('/').pop()}`;
+    
+    placeholderDiv.appendChild(icon);
+    placeholderDiv.appendChild(text);
+    placeholderDiv.appendChild(filename);
+    
+    img.parentNode.replaceChild(placeholderDiv, img);
+}
+
+// Add error handlers to all screenshot images
+document.addEventListener('DOMContentLoaded', function() {
+    const screenshots = document.querySelectorAll('.screenshot-img');
+    screenshots.forEach(img => {
+        img.onerror = function() {
+            handleImageError(this);
+        };
+        
+        // Check if image exists
+        if (!img.complete || img.naturalHeight === 0) {
+            img.setAttribute('data-height', img.parentElement.classList.contains('screenshot-main') ? '500px' : '300px');
+        }
+    });
+});
+
 console.log('BitWipers website loaded successfully!');
 console.log('Visit https://github.com/your-org/BitWipers to get started.');
+console.log('To add screenshots: Take screenshots of the GUI and save them in website/images/ folder');
