@@ -1,0 +1,28 @@
+# Core dependencies
+cryptography>=41.0.0        # For certificate generation and digital signatures
+reportlab>=4.0.0            # For PDF certificate generation
+psutil>=5.9.0               # For system and device information
+click>=8.0.0                # For CLI interface
+
+# GUI dependencies
+tkinter                     # Built-in with Python, GUI framework
+
+# Security and hashing
+hashlib                     # Built-in with Python, for secure hashing
+secrets                    # Built-in with Python, for secure random generation
+
+# System integration
+platform                   # Built-in with Python, for OS detection
+subprocess                 # Built-in with Python, for system commands
+ctypes                     # Built-in with Python, for low-level system calls
+
+# Development and testing (optional, move to requirements-dev.txt for production)
+pytest>=7.0.0              # Testing framework
+pytest-cov>=4.0.0          # Coverage reporting
+black>=23.0.0              # Code formatting
+flake8>=6.0.0              # Linting
+mypy>=1.0.0                # Type checking
+
+# Documentation
+sphinx>=5.0.0              # Documentation generation
+sphinx-rtd-theme>=1.2.0    # Documentation theme
