@@ -13,7 +13,7 @@
   <strong>Addressing India's ₹50,000 Crore E-Waste Crisis with Secure Data Sanitization</strong>
 </p>
 
-[**🚀 Live Demo**](https://your-org.github.io/BitWipers) | [**📖 Documentation**](docs/) | [**🎯 Quick Start**](#-quick-start) | [**🤝 Contribute**](CONTRIBUTING.md)
+[**🚀 Live Demo**](https://bit-wipers.vercel.app/) | [**🎯 Quick Start**](#-quick-start) | [**🤝 Contribute**](CONTRIBUTING.md)
 
 </div>
 
@@ -79,7 +79,7 @@ python --version
 #### **Option 1: Clone from GitHub**
 ```bash
 # Clone the repository
-git clone https://github.com/your-org/BitWipers.git
+git clone https://github.com/eklavyamathur9/BitWipers.git
 cd BitWipers
 
 # Install dependencies
@@ -89,7 +89,7 @@ pip install -r requirements.txt
 #### **Option 2: Download Release**
 ```bash
 # Download latest release
-curl -L https://github.com/your-org/BitWipers/releases/latest/download/BitWipers.zip -o BitWipers.zip
+curl -L https://github.com/eklavyamathur9/BitWipers/releases/latest/download/BitWipers.zip -o BitWipers.zip
 unzip BitWipers.zip
 cd BitWipers
 ```
@@ -300,7 +300,7 @@ We welcome contributions from the community! See our [Contributing Guide](CONTRI
 ```bash
 # Fork the repository
 # Clone your fork
-git clone https://github.com/YOUR-USERNAME/BitWipers.git
+git clone https://github.com/eklavyamathur9/BitWipers
 
 # Create a feature branch
 git checkout -b feature/amazing-feature
@@ -333,7 +333,7 @@ of this software...
 
 Visit our website for a visual overview of BitWipers:
 
-🔗 **[https://your-org.github.io/BitWipers](https://your-org.github.io/BitWipers)**
+🔗 **[https://bit-wipers.vercel.app/](https://bit-wipers.vercel.app/)**
 
 The website features:
 - Interactive demo
@@ -347,10 +347,7 @@ The website features:
 ## 📞 **Support & Contact**
 
 ### **Get Help**
-- 📖 [Documentation](docs/)
-- 💬 [GitHub Issues](https://github.com/your-org/BitWipers/issues)
-- 📧 Email: support@bitwipers.org
-- 🐦 Twitter: [@BitWipers](https://twitter.com/bitwipers)
+- 💬 [GitHub Issues](https://github.com/eklavyamathur9/BitWipers/issues)
 
 ### **Organization**
 - **Institution**: Ministry of Mines - JNARDDC
@@ -388,6 +385,6 @@ The developers and associated organizations are not liable for any data loss, re
 
 *Contributing to a cleaner environment through secure e-waste management*
 
-**[⭐ Star this repository](https://github.com/your-org/BitWipers)** to support the project!
+**[⭐ Star this repository](https://github.com/eklavyamathur9/BitWipers)** to support the project!
 
 </div>
