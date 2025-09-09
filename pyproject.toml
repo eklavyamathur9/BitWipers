@@ -1,0 +1,103 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bitwipers"
+version = "1.0.0"
+description = "Secure data wiping application for trustworthy IT asset recycling"
+readme = "README.md"
+authors = [
+    {name = "Ministry of Mines - JNARDDC", email = "support@bitwipers.gov.in"}
+]
+license = {text = "MIT"}
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: System Administrators",
+    "Topic :: System :: Systems Administration",
+    "Topic :: Security :: Cryptography",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Operating System :: OS Independent",
+]
+keywords = [
+    "data-wiping",
+    "secure-erasure",
+    "data-sanitization",
+    "e-waste",
+    "NIST-SP-800-88",
+]
+dependencies = [
+    "cryptography>=41.0.0",
+    "reportlab>=4.0.0",
+    "psutil>=5.9.0",
+    "click>=8.0.0",
+]
+requires-python = ">=3.8"
+
+[project.urls]
+Homepage = "https://github.com/YOUR_USERNAME/BitWipers"
+Documentation = "https://bitwipers.readthedocs.io/"
+Repository = "https://github.com/YOUR_USERNAME/BitWipers"
+"Bug Tracker" = "https://github.com/YOUR_USERNAME/BitWipers/issues"
+
+[project.scripts]
+bitwipers = "bitwipers.main:main"
+bitwipers-gui = "bitwipers.gui.main:main"
+bitwipers-cli = "bitwipers.cli.main:main"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "black>=23.0.0",
+    "flake8>=6.0.0",
+    "mypy>=1.0.0",
+]
+docs = [
+    "sphinx>=5.0.0",
+    "sphinx-rtd-theme>=1.2.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.black]
+line-length = 88
+target-version = ['py38', 'py39', 'py310', 'py311']
+include = '\.pyi?$'
+
+[tool.isort]
+profile = "black"
+line_length = 88
+
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_configs = true
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py", "*_test.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = "-v --tb=short --strict-markers"
+
+[tool.coverage.run]
+source = ["src/bitwipers"]
+omit = ["*/tests/*", "*/test_*.py"]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "if self.debug:",
+    "if __name__ == .__main__.:",
+    "raise NotImplementedError",
+]
