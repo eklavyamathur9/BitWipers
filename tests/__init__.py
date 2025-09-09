@@ -1,0 +1,3 @@
+"""
+BitWipers test suite.
+"""
